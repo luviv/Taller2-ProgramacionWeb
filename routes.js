@@ -6,24 +6,24 @@ function createRoutes (app, db) {
     app.get('/', (request, response) => {
         response.sendFile(__dirname + '/public/home.html');
 
-        // seleccionamos la colección que necesitamos
-        const products = db.collection('products');
-
-        // buscamos todos los productos
-        products.find({})
-            // transformamos el cursor a un arreglo
-            .toArray((err, result) => {
-                // asegurarnos de que no hay error
-                assert.equal(null, err);
-
-                //
-                console.log(result);
-            });
-
     });
 
     app.get('/api/products', (request, response) => {
-        response.send(products);
+         // seleccionamos la colección que necesitamos
+         const products = db.collection('products');
+
+         // buscamos todos los productos
+         products.find({})
+             // transformamos el cursor a un arreglo
+             .toArray((err, result) => {
+                 // asegurarnos de que no hay error
+                 assert.equal(null, err);
+                 //Si el resultado tiene algo, entonces se pasa la información
+                 response.send(result);
+                 console.log(result);
+             });
+  
+        
     })
 
     app.post('/api/products', (request, response) => {
