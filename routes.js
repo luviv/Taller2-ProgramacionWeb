@@ -18,13 +18,33 @@ function createRoutes (app, db) {
              .toArray((err, result) => {
                  // asegurarnos de que no hay error
                  assert.equal(null, err);
+                 
                  //Si el resultado tiene algo, entonces se pasa la información
                  response.send(result);
                  console.log(result);
              });
-  
         
     })
+
+    app.get('/products', (request, response) => {
+        // seleccionamos la colección que necesitamos
+        const products = db.collection('products');
+
+        // buscamos todos los productos
+        products.find({})
+            // transformamos el cursor a un arreglo
+            .toArray((err, result) => {
+                // asegurarnos de que no hay error
+                assert.equal(null, err);
+                
+                var context = {
+                    products: result
+                };
+
+                response.render('product',context);
+            });
+       
+   })
 
     app.post('/api/products', (request, response) => {
         console.log(request.body);
@@ -36,6 +56,8 @@ function createRoutes (app, db) {
             message: 'ok',
         });
     });
+    
+
 }
 
 module.exports = createRoutes;

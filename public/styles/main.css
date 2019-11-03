@@ -1,1 +1,106 @@
 /* No CSS *//*# sourceMappingURL=main.css.map */
+@font-face{
+    font-family: "Futura Book font";
+    src: url(/media/Futura\ Book\ font.ttf);
+
+}
+
+@font-face {
+    font-family: "Futura Bold font";
+    src: url(/media/Futura\ Bold\ font.ttf);
+}
+
+body{
+    font-family: Futura Book font;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation {
+    background-color: rgb(226, 226, 225);
+    height: 80px;
+}
+
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav li {
+    padding: 15px 100px 0px 0px;
+}
+
+nav a {
+    color: rgb(80, 79, 79);
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+#logo {
+    width: 40%;
+}
+
+nav input {
+    margin: 20px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+nav input[type="keyword"] {
+    width: 50%;
+    height: 25px;
+    border-radius: 10px;
+    border: none;
+    color: rgb(80, 79, 79);
+}
+
+nav input[type="submit"] {
+    margin: 20px 40px 0px 5px;
+    height: 25px;
+    background-color: rgb(28, 70, 152);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.banner {
+    background-image: url(/media/banner.png);
+    background-size: cover;
+    height: calc(100vh - 80px);
+    align-content: center;
+    justify-content: center;
+    margin: 0px;
+}
+
+.banner__text {
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    padding: 50px;
+    margin: 0px 0px 140px 0px;
+}
+
+.banner input[type="submit"] {
+    display: block;
+    margin: 0px auto;
+    padding: 30px;
+    font-size: 50px;
+    font-family: "Futura Bold font";
+    src: url(./Futura\ Bold\ font.ttf);
+    border: none;
+    color: white;
+    background-color: rgb(229, 32, 34);
+    border-radius: 40px;
+
+}
+
+.banner input[type="submit"]:hover {
+    text-decoration: underline;
+}
