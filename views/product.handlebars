@@ -1,14 +1,13 @@
-<div>
+<div class="generalproducts">
     {{#each products}}
-        <div class="generalproduct">
-            {{!-- <img src="" alt=""> --}}
-            <div class="divimage">{{image}}</div>
-            <img src="/media{{image}}" alt="">
-            <h3 class="name">{{name}}</h3>
-            {{!-- <img src="" alt=""> --}}
-            <div class="stars">{{rating}}</div>
-            <p class="tx20">{{price}}</p>
-            <button class="btn">Agregar al carrito</button>
+         <div class="products">
+            <img class="products__img" src="/media{{image}}" alt="">
+            <h1 class="products__name" class="name">{{name}}</h1>
+            <p class="products__stars">{{rating}}</p>
+            <p class="products__price">{{price}}</p>
+            <button class="products__btn">Agregar al carrito</button>
         </div>
     {{/each}}
 </div>
+
+<link rel="stylesheet" href="/styles/main.css">
