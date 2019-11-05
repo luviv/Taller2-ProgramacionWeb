@@ -1,4 +1,5 @@
 const assert = require('assert');
+const ObjectID = require('mongodb').ObjectID;
 
 function createRoutes (app, db) {
     
@@ -56,7 +57,7 @@ function createRoutes (app, db) {
             assert.equal(null, err);
                 
                 var context = {
-                    products: result[0]
+                    products: result
                 };
 
                 console.log(context);
