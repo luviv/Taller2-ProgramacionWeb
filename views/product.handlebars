@@ -6,8 +6,11 @@
             <p class="products__stars">{{rating}}</p>
             <p class="products__price">{{price}}</p>
             <button class="products__btn"><a href="/products/{{this._id}}">Ver más</a></button>
+            <button data-id="{{_id}}" class="productsbuy__btn">Agregar al carrito</button>
         </div>
     {{/each}}
 </div>
+
+<script src="/scripts/product.js"></script>
 
 <link rel="stylesheet" href="/styles/main.css">
