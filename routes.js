@@ -57,11 +57,11 @@ function createRoutes (app, db) {
             assert.equal(null, err);
                 
                 var context = {
-                    products: result
+                    product: result[0]
                 };
 
                 console.log(context);
-                response.render('product', context);
+                response.render('productdetail', context);
         });
    });
 
