@@ -45,7 +45,45 @@ function createRoutes (app, db) {
                 response.render('product',context);
             });
        
-   })
+   });
+
+   app.get('/api/cart', (request, response) => {
+        const cart = db.collection('cart');
+        cart.find({})
+        .toArray((err, result) => {
+            assert.equal(null, err);
+
+            var context = {
+                cart: result[0]
+            }
+            response.render('cart', context);
+        });
+
+        
+   });
+
+   app.post('/api/cart', (request, response) => {
+       const products = db.collection('cart');
+       products.find({})
+        .toArray((err, result) => {
+            assert.equal(null, err);
+            var cart = result[0];
+            cart.products.push(request.body.productId);
+            console.log(cart);
+
+            products.updateOne({_id: new ObjectID(cart._id)}, 
+
+            {
+                $set: {products: cart.products}
+            }
+            );
+
+            response.send({
+                message: 'ok',
+                cart
+            });
+        });
+   });
 
    app.get('/products/:id', (request, response) => {
        var id = request.params.id;
