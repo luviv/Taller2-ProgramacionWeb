@@ -1,5 +1,6 @@
 const assert = require('assert');
 const ObjectID = require('mongodb').ObjectID;
+var cartList = [];
 
 function createRoutes (app, db) {
     
@@ -113,6 +114,69 @@ function createRoutes (app, db) {
             message: 'ok',
         });
     });
+
+    app.post('/api/cart/:id', (request, response) => {
+        var id = request.params.id;
+        var query= {};        
+        
+        var esId=false;
+        var cont=1;
+        var common=false;
+        
+        products.find({})
+        // transformamos el cursor a un arreglo
+        .toArray((err, result) => {
+            // asegurarnos de que noh ay error
+            
+            //
+            
+            var c=0;
+            for(c;c<result.length;c++){
+                if(request.params.id.toString()===result[c]._id.toString()){
+                    esId=true;  
+                    var i=0;
+                    
+                    for(i;i<cartList.length;i++){
+                        
+                        if (request.params.id.toString()===cartList[i]._id.toString()){
+                            
+                            common=true;
+                            
+                            cartList[i].cantidad+=1;
+                            console.log(cartList[i].cantidad);
+                        } 
+                    }
+                    if(common!=true){
+                        console.log(result[c].cantidad=cont);
+                        result[c].cantidad=cont;
+                        cartList.push(result[c]);
+                    }
+                    
+                } 
+            }
+            
+            
+            if(!esId){
+                response.send({
+                    message: 'error',
+                    cartSize: cartList.length
+                });
+                return;
+            }
+            
+            
+            
+            response.send({
+                cartSize: cartList.length
+            });
+            
+        });
+        
+        
+        
+    });
+
+
     
 
 }
