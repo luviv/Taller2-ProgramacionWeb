@@ -35,7 +35,7 @@ client.connect(function(err) {
   
     createRoutes(app, db);
 
-    app.listen(7000, () => {
+    app.listen(5000, () => {
         console.log('listening');
     });
 

@@ -21,6 +21,8 @@ function handleLoad() {
                 console.log(data);
                 cartSize.innerHTML = data.cartSize;
             });
+
+
         });
     });
 }
