@@ -1,6 +1,9 @@
-<div>
-    <p>{{_id}}</p>
-    <button data-id="{{_id}}" class="productsbuy__btn">Clickeame</button>
+<div class="cart">
+    <div class="list">
+        {{#each products}}
+        <div class="product">
+            <p>{{name}}</p>
+        </div>
+        {{/each}}
+    </div>
 </div>
-
-<script src="/scripts/cart.js"></script>
