@@ -99,7 +99,6 @@ function createRoutes (app, db) {
                     product: result[0]
                 };
 
-                console.log(context);
                 response.render('productdetail', context);
         });
    });
@@ -122,7 +121,8 @@ function createRoutes (app, db) {
         var esId=false;
         var cont=1;
         var common=false;
-        
+        const products = db.collection('products');
+
         products.find({})
         // transformamos el cursor a un arreglo
         .toArray((err, result) => {
@@ -143,11 +143,9 @@ function createRoutes (app, db) {
                             common=true;
                             
                             cartList[i].cantidad+=1;
-                            console.log(cartList[i].cantidad);
                         } 
                     }
                     if(common!=true){
-                        console.log(result[c].cantidad=cont);
                         result[c].cantidad=cont;
                         cartList.push(result[c]);
                     }
@@ -165,20 +163,11 @@ function createRoutes (app, db) {
             }
             
             
-            
             response.send({
                 cartSize: cartList.length
-            });
-            
-        });
-        
-        
-        
+            }); 
+        }); 
     });
-
-
-    
-
 }
 
 module.exports = createRoutes;
