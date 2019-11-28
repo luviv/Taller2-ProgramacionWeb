@@ -63,29 +63,6 @@ function createRoutes (app, db) {
         
    });
 
-   app.get('/cart', (request, response) => {
-        
-    // buscamos todos los productos
-    var listCopy = cartList.slice();
-    var price=0;
-    var cantidad2=0;
-    if(listCopy!=null){
-        for(var i=0;i<listCopy.length;i++){
-            price+=listCopy[i].price*listCopy[i].cantidad;
-            
-        }
-    }
-    
-    const context={
-        products:listCopy,
-        total:price,
-    }
-
-    
-    response.render('cart',context);
-
-})
-
    app.post('/api/cart', (request, response) => {
        const products = db.collection('cart');
        products.find({})

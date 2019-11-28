@@ -133,30 +133,3 @@ nav input[type="submit"] {
     padding: 20px 10px 20px 10px;
     background-color: rgb(226, 226, 225);
 }
-
-.btn_cart {
-    width: 100%;
-    display: block;
-    position: fixed;
-    z-index: 1000;
-    justify-content: flex-end;
-    align-content: flex-end;
-
-}
-
-.btn_cart img {
-    justify-content: flex-end;
-    align-content: flex-end;
-    padding: 0px 0px 0px 92vw;
-    margin: 0px;
-    position: fixed;
-}
-
-.btn_cart p {
-    padding: 0px 0px 10px 94.2vw;
-    margin: 0px;
-    font-size: 25px;
-    position: fixed;
-    color: white;
-    
-}
