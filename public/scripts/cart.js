@@ -1,4 +1,4 @@
-function handleLoad() {
+
     var btn = document.querySelectorAll('.productsbuy__btn');
     var cartSize = document.querySelector('.countsize');
 
@@ -21,10 +21,5 @@ function handleLoad() {
                 console.log(data);
                 cartSize.innerHTML = data.cartSize;
             });
-
-
         });
     });
-}
-
-window.addEventListener('load', handleLoad);
