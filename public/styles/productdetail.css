@@ -1,0 +1,43 @@
+.productdetail{
+    display: flex;
+    margin: 50px;
+    background: #E1E1E1;
+    justify-content: center;
+    align-items: center;
+}
+
+.img__detail {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+}
+
+.img__detail img {
+    width: 50%;
+    
+}
+
+.text__detail {
+    width: 50%;
+}
+
+.text__detail h1{
+    color: #515050;
+    font-size: 40px;
+    padding: 20px 0px;
+}
+
+.text__detail p {
+    font-size: 20px;
+    font-family: Futura Book font;
+    padding: 5px 40px 30px 0px;
+}
+
+.text__detail button {
+    font-size: 20px;
+    color: white;
+    background: #304894;
+    border-radius: 39px;
+}

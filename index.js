@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb+srv://finalweb:finalweb123@cluster0-xhwiv.mongodb.net/test?retryWrites=true&w=majority';
 const dbName = 'store';
 const client = new MongoClient(url);
 
@@ -35,7 +35,7 @@ client.connect(function(err) {
   
     createRoutes(app, db);
 
-    app.listen(5000, () => {
+    app.listen(process.env.PORT || 5000, () => {
         console.log('listening');
     });
 
