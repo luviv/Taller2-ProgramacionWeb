@@ -2,17 +2,31 @@
     <div class="list">
         {{#each products}}
         <div class="product">
-            <p>{{name}}</p>
-            <button>Click</button>
+            <div>
+                <p class="parrafo">Imagen</p>
+                <img src="/media{{image}}" alt="">
+            </div>
+            <div>
+                <p class="parrafo">Nombre</p>
+                <p>{{name}}</p>
+            </div>
+            <div>
+                <p class="parrafo">Precio</p>
+                <p>${{price}} COP</p>
+            </div>
+            
         </div>
         {{/each}}
     </div>
     <script src="/scripts/cart.js"></script>
 </div>
-<div>
-    <p>{{_id}}</p>
+
+<div class="buybtn">
+    <button><a href="/orders">Ir al pago</a></button>
 </div>
 
-<button><a href="/orders">Ir al pago</a></button>
+
+
+<link rel="stylesheet" href="/styles/cart.css">
 
 <script src="/scripts/cart.js"></script>

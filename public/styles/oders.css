@@ -1,0 +1,13 @@
+.form__checkout {
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__checkout input {
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

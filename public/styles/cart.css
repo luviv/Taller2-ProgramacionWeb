@@ -1,0 +1,41 @@
+.product {
+    display: flex;
+    margin: 50px;
+    background: #E1E1E1;
+    justify-content: center;
+    align-items: center;
+}
+
+.product img {
+    width: 50%;
+    margin: 20px;
+}
+
+.product p {
+    padding: 10px 0px 0px 50px;
+    color: #515050;
+}
+
+.parrafo {
+    color: black;
+}
+
+.buybtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buybtn button {
+    font-size: 20px;
+    color: white;
+    background: #304894;
+    border-radius: 39px;
+    padding: 10px;
+    border: none;
+}
+
+.buybtn a {
+    color: white;
+    text-decoration: none;
+}

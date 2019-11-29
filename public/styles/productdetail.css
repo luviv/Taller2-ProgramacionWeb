@@ -40,4 +40,14 @@
     color: white;
     background: #304894;
     border-radius: 39px;
+    padding: 10px;
+}
+
+.text__detail a {
+    color: white;
+    text-decoration: none;
+}
+
+.text__detail a:hover {
+    text-decoration: underline;
 }
