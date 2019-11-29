@@ -1,6 +1,14 @@
+<div class="tittle">
+    <h1>NUESTROS PRODUCTOS</h1>
+</div>
 <div class="filters">
+    <p>Ordenar por:</p>
     <form action="" method="get">
-        <select name="Ordenar" id=""></select>
+        <select name="Ordenar" id="">
+            <option value="price">Precio</option>
+            <option value="rating">Puntaje</option>
+            <option value="name">Nombre</option>
+        </select>
     </form>
 </div>
 <div class="generalproducts">
@@ -9,7 +17,7 @@
             <img class="products__img" src="/media{{image}}" alt="">
             <h1 class="products__name" class="name">{{name}}</h1>
             <p class="products__stars">{{rating}}</p>
-            <p class="products__price">{{price}}</p>
+            <p class="products__price">${{price}} COP</p>
             <button class="products__btn"><a href="/products/{{this._id}}">Ver más</a></button>
             <button data-id="{{_id}}" class="productsbuy__btn"><a href="">Agregar al carrito</a></button>
         </div>

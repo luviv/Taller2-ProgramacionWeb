@@ -28,6 +28,7 @@ body h1{
 }
 
 .navigation {
+    display: flex;
     background-color: rgb(226, 226, 225);
     height: 80px;
 }
@@ -120,7 +121,7 @@ nav input[type="submit"] {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .products {
@@ -131,6 +132,22 @@ nav input[type="submit"] {
     margin: 10px 10px 10px 10px;
     padding: 20px 10px 20px 10px;
     background-color: rgb(226, 226, 225);
+}
+
+.products img {
+    width: 60%;
+}
+
+.products h1 {
+    font-size: 26px;
+    padding: 10px 0px;
+}
+
+.products p {
+    font-size: 20px;
+    text-align: center;
+    color: #515050;
+    padding: 5px 0px;
 }
 
 .btn_cart {
@@ -158,4 +175,36 @@ nav input[type="submit"] {
     position: fixed;
     color: white;
     
+}
+
+.tittle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.tittle h1 {
+    font-family: Futura Bold font;
+    color: rgb(81, 80, 80);
+    margin: 30px 0px 0px 0px;
+    font-size: 70px;
+}
+
+.filters {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filters p {
+    font-size: 28px;
+    color: #515050;
+}
+
+.filters select {
+    font-size: 20px;
+    color: white;
+    background: #304894;
+    border-radius: 39px;
 }
