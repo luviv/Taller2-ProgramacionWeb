@@ -147,7 +147,26 @@ nav input[type="submit"] {
     font-size: 20px;
     text-align: center;
     color: #515050;
-    padding: 5px 0px;
+    padding: 0px 0px 5px 0px;
+}
+
+.products button {
+    background: #304894;
+    border-radius: 39px;
+    border: none;
+    margin: 5px 0px;
+    padding: 8px;
+}
+
+.products a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.products a:hover {
+    text-decoration: underline;
+    transition: 0.1 ease;
 }
 
 .btn_cart {
