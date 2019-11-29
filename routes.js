@@ -191,6 +191,43 @@ function createRoutes (app, db) {
             }); 
         }); 
     });
+
+    app.get('/orders', (request, response) => {
+        // seleccionamos la colección que necesitamos
+        const products = db.collection('products');
+
+        // buscamos todos los productos
+        products.find({})
+            // transformamos el cursor a un arreglo
+            .toArray((err, result) => {
+                // asegurarnos de que no hay error
+                assert.equal(null, err);
+                
+                var context = {
+                    products: result
+                };
+
+                response.render('orders',context);
+            });
+       
+   });
+
+   app.get('/api/orders', (request, response) => {
+    const cart = db.collection('orders');
+    cart.find({})
+    .toArray((err, result) => {
+        assert.equal(null, err);
+
+        var context = {
+            cart: result[0]
+        }
+        response.render('orders', context);
+    });
+
+    
+});
+
+   
     
     /*
     app.post('/api/cart/:id', (request,response)=>{
