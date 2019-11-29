@@ -1,16 +1,19 @@
-function handleLoad() {
-    var form = document.querySelector('.form__checkout')
+    var form = document.querySelector(".form__checkout");
 
-    form.addEventListener("submit", function() {
-        var promise = fetch('/api/orders', { method: 'POST' });
-        promise.then(function(response) {
-            console.log(response);
-            return response.json();
-        })
-        .then(function(data) {
-            console.log(data);
+    form.addEventListener('submit',function(event){
+    event.preventDefault();
+        var formInfo= new FormData(form);
+        var data= new URLSearchParams(formInfo);
+
+        var promise = fetch('/api/orders', {
+            method : 'POST',
+            body : data
         });
-    });
-}
 
-window.addEventListener('load', handleLoad);
+        promise.then((raw) => {
+            return raw.json();
+        }).then((info) => {
+            form.reset();
+            console.log(info);
+        });
+});
